@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Label, Input, ContactForm, Button } from './Form.styled';
+import { nanoid } from 'nanoid';
 
 export class Form extends Component {
   state = {
@@ -15,7 +16,7 @@ export class Form extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmitData(this.state);
+    this.props.onSubmitData({ id: nanoid(), ...this.state });
     this.resetState();
   };
 

@@ -1,6 +1,6 @@
 import { Box } from '../Box';
 import { ContactItem } from '../ContactItem/ContactItem';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { List } from './ContactList.styled';
 
@@ -12,7 +12,7 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
         {contacts.map(contact => (
           <ContactItem
             contact={contact}
-            key={nanoid()}
+            key={contact.id}
             onDeleteContact={onDeleteContact}
           />
         ))}
